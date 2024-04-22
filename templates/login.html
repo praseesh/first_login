@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        /* Internal CSS */
+        body {
+            
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .sub{
+            width: 322px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .frm{
+            margin-left: 38%;
+            margin-top: 17%;
+        }
+    </style>
 </head>
 <body>
     {% comment %} <h1>Login page</h1> {% endcomment %}
-
-    <form action="display">
-        <input type="text" name="t1">
-        <input type="text"name= "t2">
-        <input type="submit" value="Submit">
+<div class="sqdiv">
+    <form class="frm" action="display" method="post">
+        {% csrf_token %}
+        <input type="text" name="t1" placeholder="Username"><br>
+        <input type="text"name= "t2" placeholder="Password"><br>
+        <input class="sub" type="submit" value="Submit">
     </form>
+</div>
     <h1>{{ message }}</h1>
 </body>
 </html>
