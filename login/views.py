@@ -1,9 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.contrib import messages
 
 
+
+username = "praseesh"
+password = "pras123"
 def login(request):
-    return HttpResponse("GOOGLE..")
+    return render(request, "login.html")
 
-def home(request):
-    return HttpResponse("GOOGLE..")
+def display(request):
+    uname = request.GET["t1"]
+    pwd = request.GET["t2"]
+    if uname == username and pwd == password:
+        return render(request,"home.html")
+    else:
+        msg = "Invalid login details"
+        return render(request, "login.html", {"message":msg})
+    
