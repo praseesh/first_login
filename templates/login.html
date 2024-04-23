@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +33,7 @@
     </style>
 </head>
 <body>
-    {% comment %} <h1>Login page</h1> {% endcomment %}
+
 <div class="sqdiv">
     <form class="frm" action="display" method="post">
         {% csrf_token %}
@@ -43,5 +43,96 @@
     </form>
 </div>
     <h1>{{ message }}</h1>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>    
+
+    <style>
+        .frm {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 750px; /* Increased width */
+            height: 290px;
+            padding: 50px; /* Increased padding */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ffcc00, #ff6699, #9933cc, #6699ff, #00cc66);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        #welcome {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        input[type="text"], .sub {
+            width: 100%;
+            padding: 25px; /* Increased padding for better visuals */
+            margin-bottom: 20px;
+            font-size: 20px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .sub {
+            background-color: #007BFF; /* Changed to a blue color */
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sub:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome to the Login Page</h1>
+    </div>
+    <div class="frm">
+        <form action="display" method="post">
+            {% csrf_token %}
+            <input type="text" name="t1" placeholder="Username">
+            <input type="text" name="t2" placeholder="Password">
+            <input class="sub" type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>
