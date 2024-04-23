@@ -23,6 +23,6 @@ def display(request):
 
 def signout(request):
     # Perform sign out logic...
-    return redirect('login')
+    return render(request, 'login.html')
     
     
