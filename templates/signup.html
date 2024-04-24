@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>    
+    <title>Signup</title>
 </head>
 <body>
     <div id="welcome">
-        <h1>Welcome to the Login Page</h1>
+        <h1>Welcome to the Signup Page</h1>
     </div>
     <div class="frm">
         <form action="{% url 'login_user' %}" method="post">
             {% csrf_token %}
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <button type="submit">Login</button>
-        </form>
-        <form action="{% url 'signup' %}">
-            <button type="submit">SignUP</button>
+            <input type="email" name="email" placeholder="Email">
+            <button type="submit">Sign Up</button>
         </form>
         
     </div>
     <div>
-        {% if message %}
-            <h1>{{ message }}</h1>
+        {% if msg %}
+            <h1>{{ msg }}</h1>
         {% endif %}
      </div>
 </body>

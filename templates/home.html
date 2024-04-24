@@ -65,7 +65,7 @@
 </head>
 <body>
     <h1>Welcome to the Home Page</h1>
-    <form action="signout">
+    <form action="{% url 'logout_user' %}" name="logout_user">
         <button type="submit">Sign out</button>
     </form>
 </body>
