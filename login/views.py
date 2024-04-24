@@ -45,7 +45,7 @@ def login_user(request):
             request.session['username'] = username
             return redirect('home')
         else:
-            message = "Please enter valid credentials"
+            message = "Please enter valid credentials"+" "+username+" "+password
             return render(request, 'login.html', {'message': message})
     return render(request, 'login.html')
 
@@ -72,7 +72,6 @@ def sign_up(request):
         
         user = User.objects.create_user(username=username, password=password,email=email)
         user = authenticate(request, username=username, password=password)
-        
         if user is not None:
             # login(request, user)   
             return redirect('login_user')

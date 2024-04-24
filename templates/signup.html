@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117; /* GitHub's dark background color */
+            color: #c9d1d9; /* GitHub's text color */
+            margin: 0;
+            padding: 0;
+            margin-left: 304px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #welcome {
+            margin-bottom: 412px;
+            text-align: center;
+            margin-left: -360px;
+            margin-right: -457px;
+        }
+
+        .frm {
+            max-width: 400px;
+            width: 100%;
+            padding: 40px; /* Increase padding */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #161b22; /* GitHub's dark background color */
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px; /* Increase padding */
+            margin-bottom: 15px; /* Increase margin */
+            border: 1px solid #30363d; /* GitHub's border color */
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #0d1117; /* GitHub's dark background color */
+            color: #c9d1d9; /* GitHub's text color */
+        }
+
+        button {
+            padding: 15px; /* Increase padding */
+            background-color: #28a745; /* GitHub's green color */
+            color: #fff; /* Change text color */
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            width: 100%; /* Make button same length as form */
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        #message {
+            position: fixed;
+            top: 0; /* Show message at the top */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 20px;
+            background-color: #0d1117; /* GitHub's dark background color */
+            color: #c9d1d9; /* GitHub's text color */
+            text-align: center;
+            display: none;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
-    <div id="welcome">
+    <div class="container" id="welcome">
         <h1>Welcome to the Signup Page</h1>
     </div>
     <div class="frm">
@@ -17,12 +87,11 @@
             <input type="email" name="email" placeholder="Email">
             <button type="submit">Sign Up</button>
         </form>
-        
     </div>
     <div>
         {% if msg %}
             <h1>{{ msg }}</h1>
         {% endif %}
-     </div>
+    </div>
 </body>
 </html>
