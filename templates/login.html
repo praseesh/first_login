@@ -127,15 +127,18 @@
         <h1>Welcome to the Login Page</h1>
     </div>
     <div class="frm">
-        <form action="display" method="post">
+        <form action="login" method="post">
             {% csrf_token %}
-            <input type="text" name="t1" placeholder="Username">
-            <input type="text" name="t2" placeholder="Password">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
             <input class="sub" type="submit" value="Submit">
         </form>
-        <div class = "msg">
-        {{ message }}
+        
     </div>
-    </div>
+    <div>
+        {% if message %}
+            <h1>{{ message }}</h1>
+        {% endif %}
+     </div>
 </body>
 </html>
