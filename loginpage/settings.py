@@ -49,7 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_auto_logout.middleware.auto_logout', # django logout
 ]
 
 ROOT_URLCONF = 'loginpage.urls'
@@ -65,7 +64,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django_auto_logout.context_processors.auto_logout_client', #   Auto logout
             ],
         },
     },
@@ -125,7 +123,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTO_LOGOUT = {
-                'IDLE_TIME': 100, 'REDIRECT_TO_LOGIN_IMMEDIATELY': True,                 #  logout after 10 Seconds 
-                'MESSAGE': 'The session has expired. Please login again to continue.',
-               }  
+SESSION_COOKIE_AGE = 20
+SESSION_EXPIRED_REDIRECT_URL = 'signup'

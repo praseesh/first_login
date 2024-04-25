@@ -73,6 +73,10 @@
             display: none;
             z-index: 9999;
         }
+
+        .login-button{
+            padding-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -80,12 +84,19 @@
         <h1>Welcome to the Signup Page</h1>
     </div>
     <div class="frm">
-        <form action="{% url 'login_user' %}" method="post">
+        <form action="{% url 'signup' %}" method="post">
             {% csrf_token %}
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="email" name="email" placeholder="Email">
             <button type="submit">Sign Up</button>
+
+            
+        </form>
+        <div class="login-button">
+            <form action="/">
+        <button type="submit">Login</button>
+            </div>
         </form>
     </div>
     <div>
