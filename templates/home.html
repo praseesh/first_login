@@ -63,5 +63,15 @@
     <form action="{% url 'logout_user' %}" name="logout_user">
         <button type="submit">Sign out</button>
     </form>
+    {% for message in messages %}
+    <div class="message {{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+<script>
+        var sessionEnd = {{ seconds_until_session_end }};
+        var idleEnd = {{ seconds_until_idle_end }};
+        {{ redirect_to_login_immediately }}
+</script>
 </body>
 </html>
