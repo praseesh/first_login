@@ -1,11 +1,13 @@
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+# from django.contrib.auth import authenticate, login
 
 registered_users = {}
 
 def sign_up(request):
+    if 'username' in request.session:
+        return redirect('home')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -32,7 +34,6 @@ def login_user(request):
             request.session['username'] = username
             return redirect('home')
         else:
-            
             # return redirect('home')
             return render(request, 'login.html', {'error': 'Invalid username or password'})
 

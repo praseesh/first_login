@@ -61,6 +61,7 @@
 <body>
     <h1>Welcome to the Home Page</h1>
     <form action="{% url 'logout_user' %}" name="logout_user">
+        {% comment %} {% csrf_token %} {% endcomment %}
         <button type="submit">Sign out</button>
     </form>
     {% for message in messages %}
@@ -68,10 +69,12 @@
         {{ message }}
     </div>
 {% endfor %}
+
+{% comment %} 
 <script>
         var sessionEnd = {{ seconds_until_session_end }};
         var idleEnd = {{ seconds_until_idle_end }};
         {{ redirect_to_login_immediately }}
-</script>
+</script> {% endcomment %}
 </body>
 </html>
