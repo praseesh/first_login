@@ -49,3 +49,4 @@ def logout_user(request):
     if 'username' in request.session:
         request.session.flush()
     return redirect('login_user')
+
