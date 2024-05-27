@@ -21,6 +21,7 @@ def sign_up(request):
 
     return render(request,'signup.html')
 
+
 def login_user(request):
     if 'username' in request.session:
         return redirect('home')
