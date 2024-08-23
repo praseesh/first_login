@@ -1,7 +1,6 @@
 
 from django.shortcuts import render, redirect
 
-
 registered_users = {}
 
 def sign_up(request):
