@@ -28,7 +28,6 @@ def login_user(request):
             request.session['username'] = username
             return redirect('home')
         else:
-            # return redirect('home')
             return render(request, 'login.html', {'error': 'Invalid username or password'})
 
     return render(request, 'login.html')
