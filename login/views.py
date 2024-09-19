@@ -9,11 +9,9 @@ def sign_up(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        
         if username in registered_users:
             msg = "Username already taken"
             return render(request, 'signup.html', {'msg': msg})
-        
         registered_users[username] = password
         
         return render(request, 'login.html')
