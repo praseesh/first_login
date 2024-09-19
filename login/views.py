@@ -13,11 +13,8 @@ def sign_up(request):
             msg = "Username already taken"
             return render(request, 'signup.html', {'msg': msg})
         registered_users[username] = password
-        
         return render(request, 'login.html')
-
     return render(request,'signup.html')
-
 
 def login_user(request):
     if 'username' in request.session:
